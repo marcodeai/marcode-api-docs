@@ -43,8 +43,7 @@ Authorization: Bearer <your_token>
       "advertiserarid": "string",
       "advertiser_name": "string"
     }
-  ],
-  "hasEditAccess": true
+  ]
 }
 ```
 
