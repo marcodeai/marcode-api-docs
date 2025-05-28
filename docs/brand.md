@@ -33,7 +33,9 @@ Authorization: Bearer <your_token>
       "bkrId": "string",
       "keyword": "string",
       "region_id": 1,
-      "region_name": "string"
+      "region_name": "string",
+      "device": "string",
+      "engine": "string"
     }
   ],
   "domains": [
@@ -62,6 +64,8 @@ Authorization: Bearer <your_token>
   - `keyword`: The keyword text
   - `region_id`: ID of the region
   - `region_name`: Name of the region
+  - `device`: Name of the device (desktop or mobile)
+  - `engine`: Name of the search engine (google, bing, yahoo, aol)
 - `domains`: List of domains associated with the brand
   - `brandAllowedDomainId`: Unique identifier for the allowed domain
   - `domain`: Domain name (www. prefix automatically removed)
@@ -121,7 +125,9 @@ Creates a new brand under the specified organization.
   "keywords": [
     {
       "keyword": "keyword1",            // Required
-      "regionId": 1                     // Required
+      "regionId": 1,                    // Required
+      "engine": "google",               // Required: "google", "bing", "yahoo", "aol"
+      "device": "mobile"                // Required: "desktop", "mobile"
     }
   ],
   "domains": [
@@ -165,7 +171,9 @@ Updates the specified brand's information.
   "keywords": [
     {
       "keyword": "keyword1",            // Required
-      "regionId": 1                     // Required
+      "regionId": 1,                    // Required
+      "engine": "google",               // Required: "google", "bing", "yahoo", "aol"
+      "device": "mobile"                // Required: "desktop", "mobile"
     }
   ],
   "domains": [
