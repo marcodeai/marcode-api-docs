@@ -87,12 +87,17 @@ Returns all brands available to the authenticated user, along with user informat
 ```json
 {
   "me": {
-    // User information
+    "user_id": 1,
+    "email": "seeduser@marcode.ai",
+    "first_name": "Seed",
+    "last_name": "User"
   },
   "brands": [
     {
-      // Brand object as described above
-    }
+      "brand_id": 1,
+      "enabled": true,
+      "brand_name": "Seed Brand"
+    },
   ]
 }
 ```
@@ -153,7 +158,7 @@ Retrieves detailed information about a specific brand.
 PATCH /api/brand/{brandId}
 ```
 
-Updates the specified brand's information.
+Updates the specified brand's information.  For arrays, items will be appended to exiting values.
 
 **Path Parameters:**
 - `brandId`: ID of the brand to update
@@ -162,13 +167,13 @@ Updates the specified brand's information.
 ```json
 {
   "brandName": "Updated Brand Name",
-  "reservedKeywords": [
+  "reservedKeywords": [                 // Optional
     {
       "keyword": "Jigsaw",              // Required
       "keyword_type": "reserved"        // Required: "reserved" or "negative"
     }
   ],
-  "keywords": [
+  "keywords": [                         // Optional
     {
       "keyword": "keyword1",            // Required
       "regionId": 1,                    // Required
@@ -176,8 +181,8 @@ Updates the specified brand's information.
       "device": "mobile"                // Required: "desktop", "mobile"
     }
   ],
-  "domains": [
-    "example.com"                       // www. prefix will be automatically removed
+  "domains": [                          // Optional
+    "example.com"                       // Required: www. prefix will be automatically removed
   ]
 }
 ```
