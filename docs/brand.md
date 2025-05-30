@@ -218,6 +218,24 @@ Removes a specific reserved keyword from a brand.
 - `brandId`: ID of the brand
 - `brkId`: ID of the reserved keyword to remove
 
+### Enable / Disable Brand
+
+```http
+PUT /api/brand/{brandId}/enabled
+```
+
+Sets the brand enabled status.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+
+**Request Body:**
+```json
+{
+  "enabled": true                // Required: true, false
+}
+```
+
 ## Error Responses
 
 All endpoints can return the following error responses:
