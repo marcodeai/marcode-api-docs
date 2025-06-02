@@ -241,6 +241,24 @@ Sets the brand enabled status.
 }
 ```
 
+### Assign Brand to a Package
+
+```http
+PUT /api/brand/{brandId}/package
+```
+
+Assigns the Brand to a package.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+
+**Request Body:**
+```json
+{
+  "packageId": 1                // Required
+}
+```
+
 ## Error Responses
 
 All endpoints can return the following error responses:
