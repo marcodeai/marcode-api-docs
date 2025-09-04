@@ -215,15 +215,9 @@ Retrieves coupon data for a brand with optional filtering.
       "coupon_code": "SAVE20",
       "coupon_title": "Save 20% on Everything",
       "coupon_description": "Get 20% off your entire order",
-      "coupon_first_seen": "2024-01-15T10:30:00Z",
-      "coupon_last_seen": "2024-01-20T15:45:00Z",
-      "coupon_expires": "2024-02-15",
       "domain": "example.com",
       "coupon_site_name": "Example Deals",
-      "coupon_site_url": "https://deals.example.com",
-      "coupon_site_extension_id": "ext_123",
-      "coupon_site_metadata": {},
-      "coupon_site_code": "EX123"
+      "coupon_site_url": "https://deals.example.com"
     }
   ]
 }
