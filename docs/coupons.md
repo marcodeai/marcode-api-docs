@@ -209,7 +209,7 @@ Retrieves coupon data for a brand with optional filtering.
 **Response Example:**
 ```json
 {
-  "data": [
+  "couponsList": [
     {
       "coupon_id": "12345",
       "coupon_code": "SAVE20",
@@ -225,10 +225,7 @@ Retrieves coupon data for a brand with optional filtering.
       "coupon_site_metadata": {},
       "coupon_site_code": "EX123"
     }
-  ],
-  "totalCount": 150,
-  "limit": 50,
-  "offset": 0
+  ]
 }
 ```
 
