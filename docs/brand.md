@@ -226,12 +226,13 @@ Removes a specific reserved keyword from a brand.
 ### Enable / Disable Brand
 
 ```http
-PUT /api/brand/{brandId}/enabled
+PUT /api/org/{orgId}/brand/{brandId}/enabled
 ```
 
 Sets the brand enabled status.
 
 **Path Parameters:**
+- `orgId`: ID of the organisation who owns this brand
 - `brandId`: ID of the brand
 
 **Request Body:**
