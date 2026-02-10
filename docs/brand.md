@@ -45,7 +45,10 @@ Authorization: Bearer <your_token>
       "advertiserarid": "string",
       "advertiser_name": "string"
     }
-  ]
+  ],
+  "product_protection": true,
+  "product_couponcodes": false,
+  "product_couponsiteanalysis": false
 }
 ```
 
@@ -71,6 +74,9 @@ Authorization: Bearer <your_token>
   - `domain`: Domain name (www. prefix automatically removed)
   - `advertiserarid`: Advertiser ID associated with the domain
   - `advertiser_name`: Name of the advertiser
+- `product_protection`: Whether search engine monitoring is enabled (defaults to `true`)
+- `product_couponcodes`: Whether coupon code scheduling is enabled for the brand
+- `product_couponsiteanalysis`: Whether coupon site analysis is enabled for the brand (defaults to `true`)
 - `hasEditAccess`: Whether the current user has edit access to the brand
 
 ## API Endpoints
@@ -137,9 +143,14 @@ Creates a new brand under the specified organization.
   ],
   "domains": [
     "example.com"                       // www. prefix will be automatically removed
-  ]
+  ],
+  "product_protection": false,            // Optional: disables search engine monitoring (defaults to true)
+  "product_couponcodes": true,           // Optional: enables coupon code scheduling
+  "product_couponsiteanalysis": true     // Optional: enables coupon site analysis
 }
 ```
+
+> **Note:** Product fields are optional. If omitted, database defaults apply (`product_protection` defaults to `true`, others default to `false`). Set `product_protection` to `false` explicitly to disable search engine monitoring. Requires brand-create permissions.
 
 ### Get Brand Information
 
@@ -183,9 +194,14 @@ Updates the specified brand's information.  For arrays, items will be appended t
   ],
   "domains": [                          // Optional
     "example.com"                       // Required: www. prefix will be automatically removed
-  ]
+  ],
+  "product_protection": false,            // Optional: disables search engine monitoring
+  "product_couponcodes": true,           // Optional: enables coupon code scheduling
+  "product_couponsiteanalysis": false    // Optional: enables coupon site analysis
 }
 ```
+
+> **Note:** Setting any product field (`product_protection`, `product_couponcodes`, or `product_couponsiteanalysis`) requires brand-create permissions. If the user does not have this permission, the request will return `403 Forbidden`.
 
 ### Remove Domain from Brand
 
