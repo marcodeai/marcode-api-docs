@@ -1,17 +1,23 @@
-# Marcode Coupon Patterns & Data API
+# Marcode Coupon Management API
 
 ## Overview
 
-The Coupon Patterns & Data API allows you to manage coupon patterns for intelligent matching and retrieve filtered coupon data. This system enables pattern-based filtering where you can define patterns (like "SAVE*", "*10", etc.) and filter coupon data based on these patterns rather than exact matches.
+The Coupon Management API provides three capabilities for managing and querying coupon codes associated with a brand:
+
+- **Coupon Patterns** - Rules for grouping and filtering coupon codes by pattern (prefix, suffix, contains, exact match, or regex). Used for categorisation and reporting.
+- **Monitored Coupons** - Explicit coupon codes to actively search for and receive alerts when usage is detected. Always matched exactly.
+- **Coupon Data** - Retrieve and filter observed coupon data using pattern-based or text-based filters.
 
 ## Authentication
 
-All API endpoints require authentication using Bearer tokens. 
+All API endpoints require authentication using Bearer tokens.
 
 Include the token in the Authorization header:
 ```
 Authorization: Bearer <your_token>
 ```
+
+All endpoints also require `edit` access to the brand.
 
 ## Data Models
 
@@ -19,8 +25,8 @@ Authorization: Bearer <your_token>
 
 ```json
 {
-  "coupon_brand_pattern_id": "string",
-  "brand_id": 1,
+  "coupon_brand_pattern_id": "uuid",
+  "brand_id": 123,
   "pattern_type": "prefix" | "suffix" | "contains" | "exact" | "regex",
   "pattern": "string",
   "name": "string"
@@ -29,16 +35,32 @@ Authorization: Bearer <your_token>
 
 #### Field Descriptions
 
-- `coupon_brand_pattern_id`: Unique identifier for the coupon pattern (UUID)
+- `coupon_brand_pattern_id`: Unique identifier (UUID) for the pattern
 - `brand_id`: ID of the brand this pattern belongs to
-- `pattern_type`: Type of pattern matching
-  - `prefix`: Matches coupon codes that start with the pattern
-  - `suffix`: Matches coupon codes that end with the pattern
-  - `contains`: Matches coupon codes that contain the pattern anywhere
-  - `exact`: Matches coupon codes that exactly equal the pattern
-  - `regex`: Matches coupon codes using regular expressions
+- `pattern_type`: How the pattern should be matched against coupon codes
+  - `prefix`: Matches coupons starting with the pattern
+  - `suffix`: Matches coupons ending with the pattern
+  - `contains`: Matches coupons containing the pattern
+  - `exact`: Matches the coupon code exactly
+  - `regex`: Matches coupons against a regular expression
 - `pattern`: The pattern string to match against
-- `name`: Human-readable name for the pattern
+- `name`: A human-readable label for the pattern
+
+### Monitored Coupon Object
+
+```json
+{
+  "coupon_brand_pattern_id": "uuid",
+  "brand_id": 123,
+  "coupon_code": "string"
+}
+```
+
+#### Field Descriptions
+
+- `coupon_brand_pattern_id`: Unique identifier (UUID) for the monitored coupon
+- `brand_id`: ID of the brand this monitored coupon belongs to
+- `coupon_code`: The exact coupon code to search for
 
 ### Coupon Data Object
 
@@ -82,15 +104,15 @@ Filters use a hierarchical structure with operators and operands:
 
 ## API Endpoints
 
-### Pattern Management
+### Coupon Patterns
 
-#### Get Coupon Patterns
+#### List Coupon Patterns
 
 ```http
 GET /api/brand/{brandId}/coupons/patterns
 ```
 
-Retrieves all coupon patterns for a specific brand.
+Returns all coupon patterns (non-monitored) for the specified brand.
 
 **Path Parameters:**
 - `brandId`: ID of the brand
@@ -99,29 +121,22 @@ Retrieves all coupon patterns for a specific brand.
 ```json
 [
   {
-    "coupon_brand_pattern_id": "550e8400-e29b-41d4-a716-446655440001",
+    "coupon_brand_pattern_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
     "brand_id": 1,
     "pattern_type": "prefix",
-    "pattern": "SAVE",
-    "name": "Save Prefix Pattern"
-  },
-  {
-    "coupon_brand_pattern_id": "550e8400-e29b-41d4-a716-446655440002",
-    "brand_id": 1,
-    "pattern_type": "suffix", 
-    "pattern": "10",
-    "name": "Ten Suffix Pattern"
+    "pattern": "BRAND",
+    "name": "Brand prefix codes"
   }
 ]
 ```
 
-#### Save/Update Coupon Patterns
+#### Sync Coupon Patterns (Full Replace)
 
 ```http
 POST /api/brand/{brandId}/coupons/patterns
 ```
 
-Creates, updates, or deletes coupon patterns for a brand. This endpoint performs a complete replacement of the brand's patterns.
+Replaces the full set of coupon patterns for the brand. Patterns included in the request with a `coupon_brand_pattern_id` are updated; new patterns (without an ID) are created; existing patterns not included in the request are deleted.
 
 **Path Parameters:**
 - `brandId`: ID of the brand
@@ -131,25 +146,43 @@ Creates, updates, or deletes coupon patterns for a brand. This endpoint performs
 {
   "couponPatterns": [
     {
-      "coupon_brand_pattern_id": "550e8400-e29b-41d4-a716-446655440001", // Optional: Include for updates
-      "pattern_type": "prefix",        // Required
-      "pattern": "SAVE",              // Required
-      "name": "Save Prefix Pattern"   // Optional
-    },
-    {
-      // New pattern (no ID)
-      "pattern_type": "contains",     // Required
-      "pattern": "OFF",               // Required
-      "name": "Off Contains Pattern"  // Optional
+      "coupon_brand_pattern_id": "a1b2c3d4-...",  // Optional: include to update existing
+      "pattern_type": "prefix",                    // Required: "prefix", "suffix", "contains", "exact", "regex"
+      "pattern": "BRAND",                          // Required: the pattern string
+      "name": "Brand prefix codes"                 // Optional: human-readable label
     }
   ]
 }
 ```
 
-**Behavior:**
-- **Create**: Patterns without `coupon_brand_pattern_id` are created as new patterns
-- **Update**: Patterns with existing `coupon_brand_pattern_id` are updated
-- **Delete**: Any existing patterns not included in the request are deleted
+#### Add Coupon Patterns
+
+```http
+PATCH /api/brand/{brandId}/coupons/patterns
+```
+
+Adds one or more new coupon patterns to the brand without affecting existing patterns.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+
+**Request Body:**
+```json
+{
+  "couponPatterns": [
+    {
+      "pattern_type": "contains",       // Required: "prefix", "suffix", "contains", "exact", "regex"
+      "pattern": "SUMMER",              // Required: the pattern string
+      "name": "Summer campaign codes"   // Optional: human-readable label
+    },
+    {
+      "pattern_type": "prefix",
+      "pattern": "VIP",
+      "name": "VIP codes"
+    }
+  ]
+}
+```
 
 **Response:**
 ```json
@@ -158,13 +191,62 @@ Creates, updates, or deletes coupon patterns for a brand. This endpoint performs
 }
 ```
 
-#### AI-Powered Pattern Suggestions
+#### Delete a Single Coupon Pattern
+
+```http
+DELETE /api/brand/{brandId}/coupons/patterns/{couponBrandPatternId}
+```
+
+Removes a single coupon pattern by its ID.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+- `couponBrandPatternId`: UUID of the pattern to delete
+
+**Response:**
+```json
+{
+  "success": true,
+  "deleted": 1
+}
+```
+
+#### Delete Multiple Coupon Patterns
+
+```http
+DELETE /api/brand/{brandId}/coupons/patterns
+```
+
+Removes multiple coupon patterns by their IDs.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+
+**Request Body:**
+```json
+{
+  "couponBrandPatternIds": [
+    "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+  ]
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "deleted": 2
+}
+```
+
+#### Suggest Coupon Patterns
 
 ```http
 GET /api/brand/{brandId}/coupons/patterns/suggest
 ```
 
-Uses AI to analyze existing coupon codes and suggest patterns.
+Analyses the brand's observed coupon codes and suggests new patterns using AI. Takes into account existing patterns to avoid duplicates.
 
 **Path Parameters:**
 - `brandId`: ID of the brand
@@ -189,7 +271,116 @@ Uses AI to analyze existing coupon codes and suggest patterns.
 ]
 ```
 
-### Data Retrieval
+---
+
+### Monitored Coupon Codes
+
+#### List Monitored Coupon Codes
+
+```http
+GET /api/brand/{brandId}/coupons/monitored
+```
+
+Returns all monitored coupons for the specified brand.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+
+**Response Example:**
+```json
+[
+  {
+    "coupon_brand_pattern_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "brand_id": 1,
+    "coupon_code": "EXCLUSIVE20"
+  }
+]
+```
+
+#### Add Monitored Coupons
+
+```http
+PATCH /api/brand/{brandId}/coupons/monitored
+```
+
+Adds one or more coupon codes to be monitored. Monitored coupons are always matched exactly and are case insensitive.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+
+**Request Body:**
+```json
+{
+  "monitoredCoupons": [
+    {
+      "coupon_code": "EXCLUSIVE20"           // Required: the exact coupon code to monitor
+    },
+    {
+      "coupon_code": "VIP50"
+    }
+  ]
+}
+```
+
+**Response:**
+```json
+{
+  "success": true
+}
+```
+
+#### Delete a Single Monitored Coupon
+
+```http
+DELETE /api/brand/{brandId}/coupons/monitored/{couponBrandPatternId}
+```
+
+Removes a single monitored coupon by its ID.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+- `couponBrandPatternId`: UUID of the monitored coupon to delete
+
+**Response:**
+```json
+{
+  "success": true,
+  "deleted": 1
+}
+```
+
+#### Delete Multiple Monitored Coupons
+
+```http
+DELETE /api/brand/{brandId}/coupons/monitored
+```
+
+Removes multiple monitored coupons by their IDs.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+
+**Request Body:**
+```json
+{
+  "couponBrandPatternIds": [
+    "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "d4e5f6a7-b8c9-0123-defa-234567890123"
+  ]
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "deleted": 2
+}
+```
+
+---
+
+### Coupon Data Retrieval
 
 #### Get Coupon List with Filtering
 
@@ -204,7 +395,7 @@ Retrieves coupon data for a brand with optional filtering.
 
 **Query Parameters:**
 - `filter`: Base64-encoded JSON filter object (optional)
-- `export`: Export the data to the provided format (optional, default false, options "csv", "json", "parquet")
+- `export`: Export format (optional). One of: `"csv"`, `"json"`, `"parquet"`
 
 **Response Example:**
 ```json
@@ -273,24 +464,19 @@ Retrieves coupon data for a brand with optional filtering.
 2. Finds pattern: `SAVE` with type `prefix`
 3. Returns all coupons starting with "SAVE"
 
-**Base64 encoded:**
-```
-eyJmaWVsZCI6ImNvdXBvbl9wYXR0ZXJuX2lkIiwicHJlZGljYXRlIjoiRVFVQUxTIiwidmFsdWUiOiI1NTBlODQwMC1lMjliLTQxZDQtYTcxNi00NDY2NTU0NDAwMDEifQ==
-```
-
 #### Example 2: Filter by Multiple Patterns
 ```json
 {
   "field": "coupon_pattern_id",
   "predicate": "IN",
   "values": [
-    "550e8400-e29b-41d4-a716-446655440001", // SAVE prefix
-    "550e8400-e29b-41d4-a716-446655440002"  // 10 suffix
+    "550e8400-e29b-41d4-a716-446655440001",
+    "550e8400-e29b-41d4-a716-446655440002"
   ]
 }
 ```
 
-**Result:** Returns coupons that either start with "SAVE" OR end with "10"
+**Result:** Returns coupons that match either the first OR second pattern.
 
 #### Example 3: Filter by Coupon Code Text
 ```json
@@ -301,7 +487,7 @@ eyJmaWVsZCI6ImNvdXBvbl9wYXR0ZXJuX2lkIiwicHJlZGljYXRlIjoiRVFVQUxTIiwidmFsdWUiOiI1
 }
 ```
 
-**Result:** Returns coupons with "DISCOUNT" anywhere in the code
+**Result:** Returns coupons with "DISCOUNT" anywhere in the code.
 
 #### Example 4: Complex Filter with Multiple Conditions
 ```json
@@ -314,15 +500,15 @@ eyJmaWVsZCI6ImNvdXBvbl9wYXR0ZXJuX2lkIiwicHJlZGljYXRlIjoiRVFVQUxTIiwidmFsdWUiOiI1
       "value": "550e8400-e29b-41d4-a716-446655440001"
     },
     {
-        "field": "coupon_code",
-        "predicate": "CONTAINS",
-        "value": "DISCOUNT"
+      "field": "coupon_code",
+      "predicate": "CONTAINS",
+      "value": "DISCOUNT"
     }
   ]
 }
 ```
 
-**Result:** Coupons matching the "SAVE" pattern AND contain the string "DISCOUNT"
+**Result:** Coupons matching the pattern AND containing "DISCOUNT".
 
 #### Example 5: Exclude Certain Patterns
 ```json
@@ -335,13 +521,12 @@ eyJmaWVsZCI6ImNvdXBvbl9wYXR0ZXJuX2lkIiwicHJlZGljYXRlIjoiRVFVQUxTIiwidmFsdWUiOiI1
 }
 ```
 
-**Result:** Returns coupons that do NOT match the "SAVE" prefix pattern
+**Result:** Returns coupons that do NOT match the specified pattern.
 
 ### Base64 Encoding
 
-Filters must be base64-encoded when passed as URL parameters. Here's how to encode a filter:
+Filters must be base64-encoded when passed as query parameters:
 
-**JavaScript:**
 ```javascript
 const filter = {
   "field": "coupon_pattern_id",
@@ -400,3 +585,19 @@ Error responses include a description of what went wrong:
   "error": "Description of what went wrong"
 }
 ```
+
+## Notes
+
+1. **Patterns vs Monitored Coupons**:
+   - **Patterns** are used for grouping and filtering coupon codes in reports. They support flexible matching (prefix, suffix, contains, exact, regex).
+   - **Monitored coupons** are used for explicit searching and alerting. They are always matched exactly and are case insensitive. Use these when you want to be notified when a specific coupon code is found in the wild.
+
+2. **POST vs PATCH for Patterns**:
+   - `POST` performs a full sync: it updates existing patterns, creates new ones, and deletes any patterns not included in the request. Use this when you want to replace the entire pattern set.
+   - `PATCH` is additive only: it creates new patterns without modifying or removing existing ones. Use this when you want to append patterns to the existing list.
+
+3. **Bulk Deletes**:
+   - Both patterns and monitored coupons support single delete (via URL parameter) and bulk delete (via request body array). The bulk delete endpoint returns the count of records actually deleted.
+
+4. **Pattern-Based Filtering**:
+   - When filtering coupon data by `coupon_pattern_id`, the system resolves the pattern and applies the appropriate matching logic (prefix, suffix, etc.) to return matching coupon codes. This allows you to define patterns once and reuse them for filtering across data queries.
