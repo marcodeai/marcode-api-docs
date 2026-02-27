@@ -52,7 +52,8 @@ All endpoints also require `edit` access to the brand.
 {
   "coupon_brand_pattern_id": "uuid",
   "brand_id": 123,
-  "coupon_code": "string"
+  "coupon_code": "string",
+  "alert_on_new_site": true
 }
 ```
 
@@ -61,6 +62,9 @@ All endpoints also require `edit` access to the brand.
 - `coupon_brand_pattern_id`: Unique identifier (UUID) for the monitored coupon
 - `brand_id`: ID of the brand this monitored coupon belongs to
 - `coupon_code`: The exact coupon code to search for
+- `alert_on_new_site`: Alert mode for this monitored code
+  - `false` (default): one alert total for this code
+  - `true`: alert again when discovered on a new site identity (`coupon_site_id`, fallback `domain`)
 
 ### Coupon Data Object
 
@@ -292,7 +296,8 @@ Returns all monitored coupons for the specified brand.
   {
     "coupon_brand_pattern_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
     "brand_id": 1,
-    "coupon_code": "EXCLUSIVE20"
+    "coupon_code": "EXCLUSIVE20",
+    "alert_on_new_site": false
   }
 ]
 ```
@@ -313,10 +318,12 @@ Adds one or more coupon codes to be monitored. Monitored coupons are always matc
 {
   "monitoredCoupons": [
     {
-      "coupon_code": "EXCLUSIVE20"           // Required: the exact coupon code to monitor
+      "coupon_code": "EXCLUSIVE20",          // Required: the exact coupon code to monitor
+      "alert_on_new_site": true              // Optional: default false
     },
     {
-      "coupon_code": "VIP50"
+      "coupon_code": "VIP50",
+      "alert_on_new_site": false
     }
   ]
 }
@@ -326,6 +333,41 @@ Adds one or more coupon codes to be monitored. Monitored coupons are always matc
 ```json
 {
   "success": true
+}
+```
+
+#### Update a Single Monitored Coupon
+
+```http
+PATCH /api/brand/{brandId}/coupons/monitored/{couponBrandPatternId}
+```
+
+Updates an existing monitored coupon row by ID. Use this endpoint for UI edits (for example toggling alert mode) to avoid creating duplicate rows.
+
+**Path Parameters:**
+- `brandId`: ID of the brand
+- `couponBrandPatternId`: UUID of the monitored coupon to update
+
+**Request Body (partial update):**
+```json
+{
+  "alert_on_new_site": true
+}
+```
+
+Or:
+```json
+{
+  "coupon_code": "NEW10",
+  "alert_on_new_site": false
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "updated": 1
 }
 ```
 
@@ -591,6 +633,10 @@ Error responses include a description of what went wrong:
 1. **Patterns vs Monitored Coupons**:
    - **Patterns** are used for grouping and filtering coupon codes in reports. They support flexible matching (prefix, suffix, contains, exact, regex).
    - **Monitored coupons** are used for explicit searching and alerting. They are always matched exactly and are case insensitive. Use these when you want to be notified when a specific coupon code is found in the wild.
+   - Monitored coupons support two alert modes:
+     - `alert_on_new_site = false` (default): alert once per code.
+     - `alert_on_new_site = true`: alert once for each newly discovered site identity.
+   - Site identity uses `coupon_site_id` when present, otherwise falls back to `domain`.
 
 2. **POST vs PATCH for Patterns**:
    - `POST` performs a full sync: it updates existing patterns, creates new ones, and deletes any patterns not included in the request. Use this when you want to replace the entire pattern set.
@@ -601,3 +647,8 @@ Error responses include a description of what went wrong:
 
 4. **Pattern-Based Filtering**:
    - When filtering coupon data by `coupon_pattern_id`, the system resolves the pattern and applies the appropriate matching logic (prefix, suffix, etc.) to return matching coupon codes. This allows you to define patterns once and reuse them for filtering across data queries.
+
+5. **Forward-Only Alerting for New Monitoring Config**:
+   - If a watcher is newly added, alerts only include discoveries observed after that watcher was added.
+   - If a monitored coupon is newly added or updated, alerts only include discoveries observed after that change.
+   - This prevents immediate "catch-up" emails for discoveries that were already visible in the UI.
