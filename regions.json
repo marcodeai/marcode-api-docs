@@ -1,0 +1,1448 @@
+[
+    {
+        "country_name": "United Arab Emirates",
+        "country_code": "ae",
+        "region_id": 43,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Afghanistan",
+        "country_code": "af",
+        "region_id": 479,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Albania",
+        "country_code": "al",
+        "region_id": 482,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Algeria",
+        "country_code": "dz",
+        "region_id": 50,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Angola",
+        "country_code": "ao",
+        "region_id": 484,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Argentina",
+        "country_code": "ar",
+        "region_id": 486,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Armenia",
+        "country_code": "am",
+        "region_id": 483,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Australia",
+        "country_code": "au",
+        "region_id": 2,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Austria",
+        "country_code": "at",
+        "region_id": 36,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Azerbaijan",
+        "country_code": "az",
+        "region_id": 490,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Bahrain",
+        "country_code": "bh",
+        "region_id": 496,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Bangladesh",
+        "country_code": "bd",
+        "region_id": 493,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Belarus",
+        "country_code": "by",
+        "region_id": 506,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Belgium",
+        "country_code": "be",
+        "region_id": 298,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Benin",
+        "country_code": "bj",
+        "region_id": 498,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Bolivia",
+        "country_code": "bo",
+        "region_id": 501,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Bosnia and Herzegovina",
+        "country_code": "ba",
+        "region_id": 491,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Botswana",
+        "country_code": "bw",
+        "region_id": 505,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Brazil",
+        "country_code": "br",
+        "region_id": 201,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Bulgaria",
+        "country_code": "bg",
+        "region_id": 495,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Burkina Faso",
+        "country_code": "bf",
+        "region_id": 494,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Burundi",
+        "country_code": "bi",
+        "region_id": 497,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Cambodia",
+        "country_code": "kh",
+        "region_id": 567,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Canada",
+        "country_code": "ca",
+        "region_id": 4,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Central African Republic",
+        "country_code": "cf",
+        "region_id": 510,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Chad",
+        "country_code": "td",
+        "region_id": 646,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Chile",
+        "country_code": "cl",
+        "region_id": 133,
+        "search_enabled": true
+    },
+    {
+        "country_name": "China",
+        "country_code": "cn",
+        "region_id": 515,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Clickstream",
+        "country_code": "gb",
+        "region_id": 331,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Colombia",
+        "country_code": "co",
+        "region_id": 516,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Congo, the Democratic Republic of the",
+        "country_code": "cd",
+        "region_id": 509,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Costa Rica",
+        "country_code": "cr",
+        "region_id": 517,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Côte d'Ivoire",
+        "country_code": "ci",
+        "region_id": 512,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Croatia",
+        "country_code": "hr",
+        "region_id": 555,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Cyprus",
+        "country_code": "cy",
+        "region_id": 520,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Czech Republic",
+        "country_code": "cz",
+        "region_id": 521,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Denmark",
+        "country_code": "dk",
+        "region_id": 232,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Djibouti",
+        "country_code": "dj",
+        "region_id": 522,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Dominican Republic",
+        "country_code": "do",
+        "region_id": 524,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Ecuador",
+        "country_code": "ec",
+        "region_id": 525,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Egypt",
+        "country_code": "eg",
+        "region_id": 526,
+        "search_enabled": true
+    },
+    {
+        "country_name": "El Salvador",
+        "country_code": "sv",
+        "region_id": 643,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Equatorial Guinea",
+        "country_code": "gq",
+        "region_id": 546,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Ethiopia",
+        "country_code": "et",
+        "region_id": 529,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Finland",
+        "country_code": "fi",
+        "region_id": 530,
+        "search_enabled": true
+    },
+    {
+        "country_name": "France",
+        "country_code": "fr",
+        "region_id": 35,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Gabon",
+        "country_code": "ga",
+        "region_id": 535,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Gambia",
+        "country_code": "gm",
+        "region_id": 543,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Georgia",
+        "country_code": "ge",
+        "region_id": 537,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Germany",
+        "country_code": "de",
+        "region_id": 34,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Ghana",
+        "country_code": "gh",
+        "region_id": 540,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Global",
+        "country_code": "gb",
+        "region_id": 37,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Greece",
+        "country_code": "gr",
+        "region_id": 265,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Guatemala",
+        "country_code": "gt",
+        "region_id": 548,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Guinea",
+        "country_code": "gn",
+        "region_id": 544,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Guinea-Bissau",
+        "country_code": "gw",
+        "region_id": 550,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Haiti",
+        "country_code": "ht",
+        "region_id": 556,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Honduras",
+        "country_code": "hn",
+        "region_id": 554,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Hong Kong",
+        "country_code": "hk",
+        "region_id": 552,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Hungary",
+        "country_code": "hu",
+        "region_id": 557,
+        "search_enabled": true
+    },
+    {
+        "country_name": "India",
+        "country_code": "in",
+        "region_id": 38,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Indonesia",
+        "country_code": "id",
+        "region_id": 558,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Iraq",
+        "country_code": "iq",
+        "region_id": 561,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Ireland",
+        "country_code": "ie",
+        "region_id": 3,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Israel",
+        "country_code": "il",
+        "region_id": 46,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Italy",
+        "country_code": "it",
+        "region_id": 101,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Jamaica",
+        "country_code": "jm",
+        "region_id": 564,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Japan",
+        "country_code": "jp",
+        "region_id": 397,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Jordan",
+        "country_code": "jo",
+        "region_id": 565,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Kazakhstan",
+        "country_code": "kz",
+        "region_id": 573,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Kenya",
+        "country_code": "ke",
+        "region_id": 40,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Korea, Republic of",
+        "country_code": "kr",
+        "region_id": 571,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Kuwait",
+        "country_code": "kw",
+        "region_id": 49,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Kyrgyzstan",
+        "country_code": "kg",
+        "region_id": 566,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Lao People's Democratic Republic",
+        "country_code": "la",
+        "region_id": 574,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Lebanon",
+        "country_code": "lb",
+        "region_id": 575,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Lesotho",
+        "country_code": "ls",
+        "region_id": 580,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Liberia",
+        "country_code": "lr",
+        "region_id": 579,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Libyan Arab Jamahiriya",
+        "country_code": "ly",
+        "region_id": 583,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Lithuania",
+        "country_code": "lt",
+        "region_id": 581,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Macedonia, the former Yugoslav Republic of",
+        "country_code": "mk",
+        "region_id": 590,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Madagascar",
+        "country_code": "mg",
+        "region_id": 588,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Malawi",
+        "country_code": "mw",
+        "region_id": 602,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Malaysia",
+        "country_code": "my",
+        "region_id": 200,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Mali",
+        "country_code": "ml",
+        "region_id": 591,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Mauritania",
+        "country_code": "mr",
+        "region_id": 597,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Mauritius",
+        "country_code": "mu",
+        "region_id": 600,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Mexico",
+        "country_code": "mx",
+        "region_id": 235,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Moldova, Republic of",
+        "country_code": "md",
+        "region_id": 586,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Mongolia",
+        "country_code": "mn",
+        "region_id": 593,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Morocco",
+        "country_code": "ma",
+        "region_id": 584,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Myanmar",
+        "country_code": "mm",
+        "region_id": 592,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Namibia",
+        "country_code": "na",
+        "region_id": 604,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Nepal",
+        "country_code": "np",
+        "region_id": 610,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Netherlands",
+        "country_code": "nl",
+        "region_id": 134,
+        "search_enabled": true
+    },
+    {
+        "country_name": "New York State, USA",
+        "country_code": "us",
+        "region_id": 234,
+        "search_enabled": true
+    },
+    {
+        "country_name": "New Zealand",
+        "country_code": "nz",
+        "region_id": 42,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Nicaragua",
+        "country_code": "ni",
+        "region_id": 608,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Niger",
+        "country_code": "ne",
+        "region_id": 606,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Nigeria",
+        "country_code": "ng",
+        "region_id": 39,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Norway",
+        "country_code": "no",
+        "region_id": 609,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Oman",
+        "country_code": "om",
+        "region_id": 613,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Pakistan",
+        "country_code": "pk",
+        "region_id": 236,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Palestinian Territory, Occupied",
+        "country_code": "ps",
+        "region_id": 621,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Panama",
+        "country_code": "pa",
+        "region_id": 614,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Papua New Guinea",
+        "country_code": "pg",
+        "region_id": 617,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Paraguay",
+        "country_code": "py",
+        "region_id": 623,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Peru",
+        "country_code": "pe",
+        "region_id": 615,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Philippines",
+        "country_code": "ph",
+        "region_id": 618,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Poland",
+        "country_code": "pl",
+        "region_id": 166,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Portugal",
+        "country_code": "pt",
+        "region_id": 233,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Puerto Rico",
+        "country_code": "pr",
+        "region_id": 202,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Qatar",
+        "country_code": "qa",
+        "region_id": 624,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Romania",
+        "country_code": "ro",
+        "region_id": 626,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Russian Federation",
+        "country_code": "ru",
+        "region_id": 628,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Rwanda",
+        "country_code": "rw",
+        "region_id": 629,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Saudi Arabia",
+        "country_code": "sa",
+        "region_id": 47,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Senegal",
+        "country_code": "sn",
+        "region_id": 639,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Serbia",
+        "country_code": "rs",
+        "region_id": 627,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Sierra Leone",
+        "country_code": "sl",
+        "region_id": 637,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Singapore",
+        "country_code": "sg",
+        "region_id": 199,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Slovakia",
+        "country_code": "sk",
+        "region_id": 636,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Slovenia",
+        "country_code": "si",
+        "region_id": 634,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Somalia",
+        "country_code": "so",
+        "region_id": 640,
+        "search_enabled": true
+    },
+    {
+        "country_name": "South Africa",
+        "country_code": "za",
+        "region_id": 41,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Spain",
+        "country_code": "es",
+        "region_id": 100,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Sri Lanka",
+        "country_code": "lk",
+        "region_id": 578,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Sudan",
+        "country_code": "sd",
+        "region_id": 632,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Swaziland",
+        "country_code": "sz",
+        "region_id": 644,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Sweden",
+        "country_code": "se",
+        "region_id": 67,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Switzerland",
+        "country_code": "ch",
+        "region_id": 68,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Taiwan, Province of China",
+        "country_code": "tw",
+        "region_id": 657,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Tajikistan",
+        "country_code": "tj",
+        "region_id": 649,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Tanzania, United Republic of",
+        "country_code": "tz",
+        "region_id": 658,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Thailand",
+        "country_code": "th",
+        "region_id": 203,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Timor-Leste",
+        "country_code": "tl",
+        "region_id": 651,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Togo",
+        "country_code": "tg",
+        "region_id": 648,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Trinidad and Tobago",
+        "country_code": "tt",
+        "region_id": 655,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Tunisia",
+        "country_code": "tn",
+        "region_id": 653,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Türkiye",
+        "country_code": "tr",
+        "region_id": 364,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Turkmenistan",
+        "country_code": "tm",
+        "region_id": 652,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Uganda",
+        "country_code": "ug",
+        "region_id": 659,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Ukraine",
+        "country_code": "ua",
+        "region_id": 48,
+        "search_enabled": true
+    },
+    {
+        "country_name": "United Kingdom",
+        "country_code": "gb",
+        "region_id": 1,
+        "search_enabled": true
+    },
+    {
+        "country_name": "United States",
+        "country_code": "us",
+        "region_id": 5,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Uruguay",
+        "country_code": "uy",
+        "region_id": 661,
+        "search_enabled": true
+    },
+    {
+        "country_name": "US (Finish Line)",
+        "country_code": "us",
+        "region_id": 45,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Uzbekistan",
+        "country_code": "uz",
+        "region_id": 662,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Venezuela",
+        "country_code": "ve",
+        "region_id": 665,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Vietnam",
+        "country_code": "vn",
+        "region_id": 44,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Yemen",
+        "country_code": "ye",
+        "region_id": 671,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Zambia",
+        "country_code": "zm",
+        "region_id": 673,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Zimbabwe",
+        "country_code": "zw",
+        "region_id": 674,
+        "search_enabled": true
+    },
+    {
+        "country_name": "Åland Islands",
+        "country_code": "ax",
+        "region_id": 489,
+        "search_enabled": false
+    },
+    {
+        "country_name": "American Samoa",
+        "country_code": "as",
+        "region_id": 487,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Andorra",
+        "country_code": "ad",
+        "region_id": 478,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Anguilla",
+        "country_code": "ai",
+        "region_id": 481,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Antarctica",
+        "country_code": "aq",
+        "region_id": 485,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Antigua and Barbuda",
+        "country_code": "ag",
+        "region_id": 480,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Aruba",
+        "country_code": "aw",
+        "region_id": 488,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Bahamas",
+        "country_code": "bs",
+        "region_id": 502,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Barbados",
+        "country_code": "bb",
+        "region_id": 492,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Belize",
+        "country_code": "bz",
+        "region_id": 507,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Bermuda",
+        "country_code": "bm",
+        "region_id": 499,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Bhutan",
+        "country_code": "bt",
+        "region_id": 503,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Bouvet Island",
+        "country_code": "bv",
+        "region_id": 504,
+        "search_enabled": false
+    },
+    {
+        "country_name": "British Indian Ocean Territory",
+        "country_code": "io",
+        "region_id": 560,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Brunei Darussalam",
+        "country_code": "bn",
+        "region_id": 500,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Cameroon",
+        "country_code": "cm",
+        "region_id": 514,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Cape Verde",
+        "country_code": "cv",
+        "region_id": 518,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Cayman Islands",
+        "country_code": "ky",
+        "region_id": 572,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Christmas Island",
+        "country_code": "cx",
+        "region_id": 519,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Cocos (Keeling) Islands",
+        "country_code": "cc",
+        "region_id": 508,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Comoros",
+        "country_code": "km",
+        "region_id": 569,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Congo",
+        "country_code": "cg",
+        "region_id": 511,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Cook Islands",
+        "country_code": "ck",
+        "region_id": 513,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Dominica",
+        "country_code": "dm",
+        "region_id": 523,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Eritrea",
+        "country_code": "er",
+        "region_id": 528,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Falkland Islands (Malvinas)",
+        "country_code": "fk",
+        "region_id": 532,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Faroe Islands",
+        "country_code": "fo",
+        "region_id": 534,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Fiji",
+        "country_code": "fj",
+        "region_id": 531,
+        "search_enabled": false
+    },
+    {
+        "country_name": "French Guiana",
+        "country_code": "gf",
+        "region_id": 538,
+        "search_enabled": false
+    },
+    {
+        "country_name": "French Polynesia",
+        "country_code": "pf",
+        "region_id": 616,
+        "search_enabled": false
+    },
+    {
+        "country_name": "French Southern Territories",
+        "country_code": "tf",
+        "region_id": 647,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Gibraltar",
+        "country_code": "gi",
+        "region_id": 541,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Greenland",
+        "country_code": "gl",
+        "region_id": 542,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Grenada",
+        "country_code": "gd",
+        "region_id": 536,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Guadeloupe",
+        "country_code": "gp",
+        "region_id": 545,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Guam",
+        "country_code": "gu",
+        "region_id": 549,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Guernsey",
+        "country_code": "gg",
+        "region_id": 539,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Guyana",
+        "country_code": "gy",
+        "region_id": 551,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Heard Island and McDonald Islands",
+        "country_code": "hm",
+        "region_id": 553,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Holy See (Vatican City State)",
+        "country_code": "va",
+        "region_id": 663,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Iceland",
+        "country_code": "is",
+        "region_id": 562,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Isle of Man",
+        "country_code": "im",
+        "region_id": 559,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Jersey",
+        "country_code": "je",
+        "region_id": 563,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Kiribati",
+        "country_code": "ki",
+        "region_id": 568,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Liechtenstein",
+        "country_code": "li",
+        "region_id": 577,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Luxembourg",
+        "country_code": "lu",
+        "region_id": 582,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Macao",
+        "country_code": "mo",
+        "region_id": 594,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Maldives",
+        "country_code": "mv",
+        "region_id": 601,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Malta",
+        "country_code": "mt",
+        "region_id": 599,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Marshall Islands",
+        "country_code": "mh",
+        "region_id": 589,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Martinique",
+        "country_code": "mq",
+        "region_id": 596,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Mayotte",
+        "country_code": "yt",
+        "region_id": 672,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Micronesia, Federated States of",
+        "country_code": "fm",
+        "region_id": 533,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Monaco",
+        "country_code": "mc",
+        "region_id": 585,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Montenegro",
+        "country_code": "me",
+        "region_id": 587,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Montserrat",
+        "country_code": "ms",
+        "region_id": 598,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Mozambique",
+        "country_code": "mz",
+        "region_id": 603,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Nauru",
+        "country_code": "nr",
+        "region_id": 611,
+        "search_enabled": false
+    },
+    {
+        "country_name": "New Caledonia",
+        "country_code": "nc",
+        "region_id": 605,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Niue",
+        "country_code": "nu",
+        "region_id": 612,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Norfolk Island",
+        "country_code": "nf",
+        "region_id": 607,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Northern Mariana Islands",
+        "country_code": "mp",
+        "region_id": 595,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Palau",
+        "country_code": "pw",
+        "region_id": 622,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Pitcairn",
+        "country_code": "pn",
+        "region_id": 620,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Réunion",
+        "country_code": "re",
+        "region_id": 625,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Saint Helena",
+        "country_code": "sh",
+        "region_id": 633,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Saint Kitts and Nevis",
+        "country_code": "kn",
+        "region_id": 570,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Saint Lucia",
+        "country_code": "lc",
+        "region_id": 576,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Saint Pierre and Miquelon",
+        "country_code": "pm",
+        "region_id": 619,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Saint Vincent and the Grenadines",
+        "country_code": "vc",
+        "region_id": 664,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Samoa",
+        "country_code": "ws",
+        "region_id": 670,
+        "search_enabled": false
+    },
+    {
+        "country_name": "San Marino",
+        "country_code": "sm",
+        "region_id": 638,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Sao Tome and Principe",
+        "country_code": "st",
+        "region_id": 642,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Seychelles",
+        "country_code": "sc",
+        "region_id": 631,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Solomon Islands",
+        "country_code": "sb",
+        "region_id": 630,
+        "search_enabled": false
+    },
+    {
+        "country_name": "South Georgia and the South Sandwich Islands",
+        "country_code": "gs",
+        "region_id": 547,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Suriname",
+        "country_code": "sr",
+        "region_id": 641,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Svalbard and Jan Mayen",
+        "country_code": "sj",
+        "region_id": 635,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Tokelau",
+        "country_code": "tk",
+        "region_id": 650,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Tonga",
+        "country_code": "to",
+        "region_id": 654,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Turks and Caicos Islands",
+        "country_code": "tc",
+        "region_id": 645,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Tuvalu",
+        "country_code": "tv",
+        "region_id": 656,
+        "search_enabled": false
+    },
+    {
+        "country_name": "United States Minor Outlying Islands",
+        "country_code": "um",
+        "region_id": 660,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Vanuatu",
+        "country_code": "vu",
+        "region_id": 668,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Virgin Islands, British",
+        "country_code": "vg",
+        "region_id": 666,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Virgin Islands, U.S.",
+        "country_code": "vi",
+        "region_id": 667,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Wallis and Futuna",
+        "country_code": "wf",
+        "region_id": 669,
+        "search_enabled": false
+    },
+    {
+        "country_name": "Western Sahara",
+        "country_code": "eh",
+        "region_id": 527,
+        "search_enabled": false
+    }
+]
